@@ -3,7 +3,7 @@
 /*************************************/
 
 
-public public class Coordinates {
+public class Coordinates {
 	private int longitude;
 	private int latitude;
 	private int height;
@@ -14,15 +14,15 @@ public public class Coordinates {
 		this.height = p_height;
 	}
 
-	public getLongitude() {
+	public int getLongitude() {
 		return this.longitude;
 	}
 
-	public getLattitude() {
+	public int getLatitude() {
 		return this.latitude;
 	}
 
-	public getHeight() {
+	public int getHeight() {
 		return this.height;
 	}
 }
