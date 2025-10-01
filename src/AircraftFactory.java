@@ -1,39 +1,28 @@
-/*************************************/
-/*     @author Youness Zioual       */
-/*************************************/
-
 /*
- * Singleton
- */
+**	@author Youness Zioual
+*/
+
 public class AircraftFactory {
 	private static AircraftFactory SingleInstance = null;
+	private static long aircraftId = 1;
 
 	private AircraftFactory() {
 	}
 
 	public static AircraftFactory getInstance() {
-		if (this.SingleInstance == null) {
-			this.SingleInstance = new AircraftFactory();
+		if (SingleInstance == null) {
+			SingleInstance = new AircraftFactory();
 		}
-		return this.SingleInstance;
+		return SingleInstance;
 	}
 
-	// this method assumes that Helicopter, JetPlane, Balloon exist!
-	publice Flyable newAircraft(
-		String p_type, 
-		String p_name, 
-		Coordinates p_coordinates
-	) {
-		switch (p_type.toLowerCase()) {
-			case "helicopter":
-				return new Helicopter(p_name, p_coordinates);
-			case "jetplane":
-				return new JetPlane(p_name, p_coordinates);
-			case "balloon":
-				return new Balloon(p_name, p_coordinates);
-			default:
-				throw new IllegalArgumentException("Unknown aircraft");
-		}
+	public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) throws IllegalArgumentException {
+        return switch (p_type.toLowerCase()) {
+            case "helicopter" -> new Helicopter(aircraftId++, p_name, p_coordinates);
+            case "jetplane" -> new JetPlane(aircraftId++, p_name, p_coordinates);
+            case "balloon" -> new Ballon(aircraftId++, p_name, p_coordinates);
+            default -> throw new IllegalArgumentException("Unknown aircraft");
+        };
 	}
 }
 

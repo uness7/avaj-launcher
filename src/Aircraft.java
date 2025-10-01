@@ -1,24 +1,19 @@
-/*************************************/
-/*     @author Youness Zioual       */
-/*************************************/
+/*
+**	@author Youness Zioual
+*/
 
 public class Aircraft extends Flyable {
-	protected long id;
-	protected String name;
-	protected Coordinates coordinates;
+	protected static long id;
+	protected static String name;
+	protected static Coordinates coordinates;
 
-	Aircraft(
-		long p_id,
-		String p_name,
-		Coordinates p_coordinates,
-	) {
-		this.id = p_id;
-		this.name = p_name;
-		this.coordinates = p_coordinates;
+	Aircraft(long p_id, String p_name, Coordinates p_coordinates) {
+		id = p_id;
+		name = p_name;
+		coordinates = p_coordinates;
 	}
 
 	public void updateConditions() {
-		System.out.println(
-				"Subclasses need to override this method");
+		/* THIS METHOD IS OVERRIDDEN BY SUB CLASSES */
 	}
 }

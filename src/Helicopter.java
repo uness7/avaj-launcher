@@ -1,20 +1,38 @@
-/*************************************/
-/*     @author Youness Zioual       */
-/*************************************/
+/*
+**	@author Youness Zioual
+*/
 
 public class Helicopter extends Aircraft {
-	public Helicopter(
-		long p_id, 
-		String p_name, 
-		Coordinates p_coordinates
-	) {
-		this.id = p_id;
-		this.name = p_name;
-		this.coordinates = p_coordinates;
+	Helicopter(long id, String name, Coordinates coordinates) {
+        super(id, name, coordinates);
+
+		weatherTower.register(this); // take off
+		System.out.println("A Helicopter is taking off");
 	}
 
-	@override
+	@Override
 	public void updateConditions() {
-		System.out.println("Helicopter updated conditions");
+		String weather = this.weatherTower.getWeather(coordinates);
+
+		if (coordinates.getHeight() <= 0) { // landing
+			System.out.println("A helicopter is landing");
+			weatherTower.unregister(this);
+		}
+
+		switch (weather) {
+			case "Sunny" -> {
+				// longitude increases by 10
+				// height increases by 2
+			}
+			case "Rainy" -> {
+				// longitude increase by 5
+			}
+			case "Snow" -> {
+				// Longitude increases by 12
+			}
+			case "Fog" -> {
+				// Height increases by 1
+			}
+		}
 	}
 }

@@ -1,6 +1,6 @@
-/*************************************/
-/*     @author Youness Zioual       */
-/*************************************/
+/*
+**	@author Youness Zioual
+*/
 
 public class WeatherTower extends Tower {
 	WeatherProvider obj = WeatherProvider.getInstance();
