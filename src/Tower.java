@@ -2,10 +2,11 @@
 **	@author Youness Zioual
 */
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-	private static List<Flyable> observers;
+	private static List<Flyable> observers = new ArrayList<>();
 
 	Tower() {
 	}
@@ -19,6 +20,8 @@ public class Tower {
 	}
 
 	protected void conditionChanged() {
-		//
+		for (Flyable p_flyable : observers) {
+			p_flyable.updateConditions();
+		}
 	}
 }

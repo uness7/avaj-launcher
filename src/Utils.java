@@ -11,11 +11,13 @@ public class Utils {
   public Utils() {}
 
   public LinkedList<Node> parse(LinkedList<String> content) {
+    System.out.println("inside parse function");
 
-    LinkedList<Node> result = new LinkedList<Node>();
+    LinkedList<Node> result = new LinkedList<>();
 
     if (!isContentValid(content)) {
       // throw an exception
+      System.out.println("Content is invalid");
       return result; // the result here is empty, we should return an exception instead
     }
 
@@ -24,10 +26,10 @@ public class Utils {
     while (it.hasNext()) {
       String line = it.next();
 	  String[] elements = line.split(" ");
-
-	  if (!line.contains("Baloon") && !line.contains("JetPlane") && !line.contains("Helicopter") ) {
+      System.out.println("first el " + elements[0]);
+	  if (!line.contains("Balloon") && !line.contains("JetPlane") && !line.contains("Helicopter") ) {
 		  result.add(new Node(NodeType.FIRST_LINE, "None", toInt(elements[0]), toInt(elements[0]), toInt(elements[0])));
-	  } else if (line.startsWith("Baloon")) {
+	  } else if (line.startsWith("Balloon")) {
 		  result.add(new Node(NodeType.BALOON, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
 	  } else if (line.startsWith("JetPlane")) {
 		  result.add(new Node(NodeType.JETPLANE, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
@@ -59,11 +61,12 @@ public class Utils {
   }
 
   public boolean isContentValid(LinkedList<String> content) {
-    String[] aircrafts = {"Baloon", "JetPlane", "Helicopter"};
+    String[] aircrafts = {"Balloon", "JetPlane", "Helicopter"};
     ListIterator<String> it = content.listIterator();
     String firstElement = it.next();
 
     if (!isFirstLineValid(firstElement)) {
+      System.out.println("first line is invalid");
       return false;
     }
 
@@ -74,7 +77,11 @@ public class Utils {
       ListIterator<String> it1 = list.listIterator();
       int numberOfElements = 0;
 
+      //list.forEach(System.out::println);
+
+
       if (!isPositiveNumber(elements)) {
+        System.out.println("number is invalid because it's negative");
         return false;
       }
 
@@ -84,14 +91,17 @@ public class Utils {
       }
 
       if (numberOfElements != 5) {
+        System.out.println("number is invalid because it's not equal to 5");
         return false;
       }
 
-      if (!list.contains(aircrafts[0]) 
-          && !list.contains(aircrafts[1])
-          && !list.contains(aircrafts[2])) {
-        return false;
-          }
+      //list.forEach(System.out::println);
+//      if (!list.contains(aircrafts[0])
+//              && !list.contains(aircrafts[1])
+//              && !list.contains(aircrafts[2])) {
+//        System.out.println("invalid aircraft type");
+//        return false;
+//      }
     }
 
     return true;

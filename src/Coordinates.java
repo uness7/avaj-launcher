@@ -5,6 +5,19 @@
 
 public class Coordinates {
 	private static int longitude;
+
+	public static void setLongitude(int longitude) {
+		Coordinates.longitude = longitude;
+	}
+
+	public static void setLatitude(int latitude) {
+		Coordinates.latitude = latitude;
+	}
+
+	public static void setHeight(int height) {
+		Coordinates.height = height;
+	}
+
 	private static int latitude;
 	private static int height;
 
@@ -24,17 +37,5 @@ public class Coordinates {
 
 	public int getHeight() {
 		return height;
-	}
-
-	public void setLongitude(int p_longitude) {
-		longitude = p_longitude;
-	}
-
-	public void setLatitude(int p_latitude) {
-		latitude = p_latitude;
-	}
-
-	public void setHeight(int p_height) {
-		height = p_height;
 	}
 }

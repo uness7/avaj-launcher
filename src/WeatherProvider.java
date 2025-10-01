@@ -25,7 +25,7 @@ public class WeatherProvider {
 		} else if (sum > 100 && sum < 200) {
 			return this.weather[2];
 		} else {
-			return this.weather[4];
+			return this.weather[3];
 		}
 	}
 }
