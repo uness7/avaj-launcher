@@ -2,56 +2,41 @@
 /*     @author Youness Zioual       */
 /*************************************/
 
-// then check if the content is all valid
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.List;
-import java.util.Arrays;
-
-
-// the first line contains a positive number that represent the number of times
-// the simulation is run!
-
-// the rest follows this format - type name longitude, latitude height
-// coordinates are positive numbers
-
-// name that can ONLY be Baloon, Helicopter, JetPlane
+import java.util.*;
 
 public class Utils {
-  public Utils() {
-  }
+  public Utils() {}
 
   public LinkedList<Node> parse(LinkedList<String> content) {
 
-    if (!validateContent(content)) {
+    LinkedList<Node> result = new LinkedList<Node>();
+
+    if (!isContentValid(content)) {
       // throw an exception
-      return null;
+      return result; // the result here is empty, we should return an exception instead
     }
 
-    LinkedList<Node> result = new LinkedList<Node>();
     ListIterator<String> it = content.listIterator();
-
-    it.next();
-    System.out.println(it.next());
 
     while (it.hasNext()) {
       String line = it.next();
+	  String[] elements = line.split(" ");
 
-      if (line.startsWith("Baloon")) {
-        System.out.println("It's a fucking baloon");
-      } else if (line.startsWith("JetPlane")) {
-        System.out.println("It's a fucking JetPlane");
-      } else if (line.startsWith("Helicopter")) {
-        System.out.println("It's a fucking JetPlane");
-      } else {
-        System.out.println("Aircraft is not recognized");
-      }
+	  if (!line.contains("Baloon") && !line.contains("JetPlane") && !line.contains("Helicopter") ) {
+		  result.add(new Node(NodeType.FIRST_LINE, "None", toInt(elements[0]), toInt(elements[0]), toInt(elements[0])));
+	  } else if (line.startsWith("Baloon")) {
+		  result.add(new Node(NodeType.BALOON, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
+	  } else if (line.startsWith("JetPlane")) {
+		  result.add(new Node(NodeType.JETPLANE, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
+	  } else if (line.startsWith("Helicopter")) {
+		  result.add(new Node(NodeType.HELICOPTER, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
+	  } else {
+        System.out.println("THIS CODE MUST NOT BE REACHABLE!");
+	  }
     }
-
     return result;
   }
 
@@ -66,13 +51,14 @@ public class Utils {
       while ((line = buffer.readLine()) != null) {
         input.add(line);
       }
+	  buffer.close();
     } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("Exception " + e);
     }
     return input;
   }
 
-  public boolean validateContent(LinkedList<String> content) {
+  public boolean isContentValid(LinkedList<String> content) {
     String[] aircrafts = {"Baloon", "JetPlane", "Helicopter"};
     ListIterator<String> it = content.listIterator();
     String firstElement = it.next();
@@ -115,7 +101,7 @@ public class Utils {
     try {
       int result = Integer.parseInt(line);
     } catch (Exception e) {
-      e.printStackTrace();
+      System.out.println("Exception " + e);
       return false;
     }
     return true;
@@ -123,17 +109,24 @@ public class Utils {
 
   public boolean isPositiveNumber(String[] els) {
     for (String el : els) {
-      if (el == els[0] || el == els[1]) continue;
+      if (Objects.equals(el, els[0]) || Objects.equals(el, els[1])) {
+        continue;
+      }
+
       try {
         int number = Integer.parseInt(el);
         if (number < 0) {
           return false;
         }
       } catch (Exception e) {
-        e.printStackTrace();
+        System.out.println("Exception " + e);
         return false;
       }
     }
     return true;
+  }
+
+  private int toInt(String value) {
+    return Integer.parseInt(value);
   }
 }

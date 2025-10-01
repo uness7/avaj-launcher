@@ -3,14 +3,12 @@
 /*************************************/
 
 import java.util.LinkedList;
-import java.util.ListIterator;
 
 public class Main {
-	public static void main(String arg[]) {
-
+	public static void main(String[] arg) {
 		String fileName = "";
 
-		if (arg.length > 1 || arg.length == 0) {
+		if (arg.length != 1) {
 			System.out.println("something is wrong");
 			return ;
 		}
@@ -20,11 +18,10 @@ public class Main {
 		Utils utils = new Utils();
 		LinkedList<String> list = utils.parseFileToList(fileName);
         LinkedList<Node> res = utils.parse(list);
-        //ListIterator<Node> it = res.listIterator();
 
-		if (utils.validateContent(list)) {
-			utils.parse(list);
-		}
+        for (Node current : res) {
+            System.out.println(current.toString());
+        }
 	}
 }
 

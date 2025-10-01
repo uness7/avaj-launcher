@@ -22,4 +22,3 @@ public class Aircraft extends Flyable {
 				"Subclasses need to override this method");
 	}
 }
-
