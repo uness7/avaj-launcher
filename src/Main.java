@@ -19,6 +19,9 @@ public class Main {
 
 		Utils utils = new Utils();
 		LinkedList<String> list = utils.parseFileToList(fileName);
+        LinkedList<Node> res = utils.parse(list);
+        //ListIterator<Node> it = res.listIterator();
+
 		if (utils.validateContent(list)) {
 			utils.parse(list);
 		}

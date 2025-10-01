@@ -22,95 +22,118 @@ import java.util.Arrays;
 // name that can ONLY be Baloon, Helicopter, JetPlane
 
 public class Utils {
+  public Utils() {
+  }
 
-	public Utils() {
-	}
+  public LinkedList<Node> parse(LinkedList<String> content) {
 
-	public LinkedList<Node> parse(LinkedList<Node> content) {
-		LinkedList<Node> list = new LinkedList<>();
-		System.out.println("parse function");
-		return list;
-	}
+    if (!validateContent(content)) {
+      // throw an exception
+      return null;
+    }
 
-	public LinkedList<String> parseFileToList(String fileName) {
-		LinkedList<String> input = new LinkedList<>();
+    LinkedList<Node> result = new LinkedList<Node>();
+    ListIterator<String> it = content.listIterator();
 
-		try {
-			FileReader fileReader = new FileReader(fileName);
-			BufferedReader buffer = new BufferedReader(fileReader);
-			String line;
+    it.next();
+    System.out.println(it.next());
 
-			while ((line = buffer.readLine()) != null) {
-				input.add(line);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return input;
-	}
+    while (it.hasNext()) {
+      String line = it.next();
 
-	public boolean validateContent(LinkedList<String> content) {
-		String[] aircrafts = {"Baloon", "JetPlane", "Helicopter"};
-		ListIterator<String> it = content.listIterator();
-		String firstElement = it.next();
+      if (line.startsWith("Baloon")) {
+        System.out.println("It's a fucking baloon");
+      } else if (line.startsWith("JetPlane")) {
+        System.out.println("It's a fucking JetPlane");
+      } else if (line.startsWith("Helicopter")) {
+        System.out.println("It's a fucking JetPlane");
+      } else {
+        System.out.println("Aircraft is not recognized");
+      }
+    }
 
-		if (!isFirstLineValid(firstElement)) {
-			return false;
-		}
+    return result;
+  }
 
-		while (it.hasNext()) {
-			String line = it.next();
-			String[] elements = line.split(" ");
-			List<String> list = Arrays.asList(elements);
-			ListIterator<String> it1 = list.listIterator();
-			int numberOfElements = 0;
+  public LinkedList<String> parseFileToList(String fileName) {
+    LinkedList<String> input = new LinkedList<>();
 
-			if (!isPositiveNumber(elements)) {
-				return false;
-			}
+    try {
+      FileReader fileReader = new FileReader(fileName);
+      BufferedReader buffer = new BufferedReader(fileReader);
+      String line;
 
-			while (it1.hasNext()) {
-				it1.next();
-				numberOfElements++;
-			}
+      while ((line = buffer.readLine()) != null) {
+        input.add(line);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return input;
+  }
 
-			if (numberOfElements != 5) {
-				return false;
-			}
+  public boolean validateContent(LinkedList<String> content) {
+    String[] aircrafts = {"Baloon", "JetPlane", "Helicopter"};
+    ListIterator<String> it = content.listIterator();
+    String firstElement = it.next();
 
-			if (!list.contains(aircrafts[0]) 
-					&& !list.contains(aircrafts[1])
-					&& !list.contains(aircrafts[2])) {
-				return false;
-			}
-		}
+    if (!isFirstLineValid(firstElement)) {
+      return false;
+    }
 
-		return true;
-	}
+    while (it.hasNext()) {
+      String line = it.next();
+      String[] elements = line.split(" ");
+      List<String> list = Arrays.asList(elements);
+      ListIterator<String> it1 = list.listIterator();
+      int numberOfElements = 0;
 
-	private boolean isFirstLineValid(String line) {
-		try {
-			int result = Integer.parseInt(line);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
+      if (!isPositiveNumber(elements)) {
+        return false;
+      }
 
-	public boolean isPositiveNumber(String[] els) {
-		for (String el : els) {
-			if (el == els[0] || el == els[1]) continue;
-			try {
-				int number = Integer.parseInt(el);
-				if (number < 0) {
-					return false;
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-				return false;
-			}
-		}
-		return true;
-	}
+      while (it1.hasNext()) {
+        it1.next();
+        numberOfElements++;
+      }
+
+      if (numberOfElements != 5) {
+        return false;
+      }
+
+      if (!list.contains(aircrafts[0]) 
+          && !list.contains(aircrafts[1])
+          && !list.contains(aircrafts[2])) {
+        return false;
+          }
+    }
+
+    return true;
+  }
+
+  private boolean isFirstLineValid(String line) {
+    try {
+      int result = Integer.parseInt(line);
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isPositiveNumber(String[] els) {
+    for (String el : els) {
+      if (el == els[0] || el == els[1]) continue;
+      try {
+        int number = Integer.parseInt(el);
+        if (number < 0) {
+          return false;
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+      }
+    }
+    return true;
+  }
 }
