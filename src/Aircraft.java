@@ -3,9 +3,9 @@
 */
 
 public class Aircraft extends Flyable {
-	protected static long id;
-	protected static String name;
-	protected static Coordinates coordinates;
+	protected long id;
+	protected String name;
+	protected Coordinates coordinates;
 
 	Aircraft(long p_id, String p_name, Coordinates p_coordinates) {
 		id = p_id;
@@ -15,5 +15,9 @@ public class Aircraft extends Flyable {
 
 	public void updateConditions() {
 		/* THIS METHOD IS OVERRIDDEN BY SUB CLASSES */
+	}
+
+	public void log(String type, String message) {
+		System.out.println(type + "#" + name + "(" + id + "): " + message);
 	}
 }

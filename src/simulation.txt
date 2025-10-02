@@ -1,0 +1,191 @@
+Tower says: Balloon#B1(1) registered to weather tower.
+Tower says: Balloon#B2(2) registered to weather tower.
+Tower says: JetPlane#J1(3) registered to weather tower.
+Tower says: Helicopter#H1(4) registered to weather tower.
+Tower says: Helicopter#H2(5) registered to weather tower.
+Tower says: Helicopter#H3(6) registered to weather tower.
+Tower says: Balloon#B3(7) registered to weather tower.
+Tower says: JetPlane#J2(8) registered to weather tower.
+Tower says: Helicopter#H4(9) registered to weather tower.
+Balloon#B1(1): We're out here, I love rainy days! They calm me down!
+Balloon#B2(2): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J1(3): Dang it's snowy, tell joey!
+Helicopter#H1(4): Oh My days! we're going through a fog!
+Helicopter#H2(5): It's a snowy day!
+Helicopter#H3(6): It's a snowy day!
+Balloon#B3(7): Snowy Balloony! We might freeze and dieeeee
+JetPlane#J2(8): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H4(9): Oh today's sunny!!!!!
+Balloon#B1(1): We're out here having a blast in a sunny day inside the Balloon
+Balloon#B2(2): Snowy Balloony! We might freeze and dieeeee
+Tower says: Helicopter(2): unregistered from the weather tower.
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+Balloon#B1(1): Foggy Balloony
+Tower says: Balloon(1): unregistered from the weather tower.
+JetPlane#J1(3): Oh my god! we're living our best flight ever in this beautiful sunny weather!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!
+JetPlane#J1(3): Oh shoot, it's foggy today, I hate fogs!!
+Helicopter#H1(4): Oh today's sunny!!!!!
+Helicopter#H2(5): Oh today's sunny!!!!!
+Helicopter#H3(6): Oh today's sunny!!!!!
+Balloon#B3(7): We're out here having a blast in a sunny day inside the Balloon
+JetPlane#J2(8): Dang it's snowy, tell joey!
+Helicopter#H4(9): Oh My days! we're going through a fog!

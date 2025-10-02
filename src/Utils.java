@@ -1,48 +1,45 @@
-/*************************************/
-/*     @author Youness Zioual       */
-/*************************************/
+/*
+**  @author Youness Zioual
+*/
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class Utils {
-  public Utils() {}
+public final class Utils {
+  private Utils() {
+  }
 
-  public LinkedList<Node> parse(LinkedList<String> content) {
-    System.out.println("inside parse function");
-
+  public static LinkedList<Node> parse(LinkedList<String> content) {
     LinkedList<Node> result = new LinkedList<>();
 
-    if (!isContentValid(content)) {
-      // throw an exception
-      System.out.println("Content is invalid");
-      return result; // the result here is empty, we should return an exception instead
+    try {
+      validateContent(content);
+    } catch (NoSuchElementException e) {
+      throw new InvalidInputFile("File content is not valid");
     }
 
-    ListIterator<String> it = content.listIterator();
 
-    while (it.hasNext()) {
-      String line = it.next();
-	  String[] elements = line.split(" ");
-      System.out.println("first el " + elements[0]);
-	  if (!line.contains("Balloon") && !line.contains("JetPlane") && !line.contains("Helicopter") ) {
-		  result.add(new Node(NodeType.FIRST_LINE, "None", toInt(elements[0]), toInt(elements[0]), toInt(elements[0])));
-	  } else if (line.startsWith("Balloon")) {
-		  result.add(new Node(NodeType.BALOON, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
-	  } else if (line.startsWith("JetPlane")) {
-		  result.add(new Node(NodeType.JETPLANE, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
-	  } else if (line.startsWith("Helicopter")) {
-		  result.add(new Node(NodeType.HELICOPTER, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
-	  } else {
+    for (String line : content) {
+      String[] elements = line.split(" ");
+
+      if (!line.contains("Balloon") && !line.contains("JetPlane") && !line.contains("Helicopter")) {
+        result.add(new Node(NodeType.FIRST_LINE, "None", toInt(elements[0]), toInt(elements[0]), toInt(elements[0])));
+      } else if (line.startsWith("Balloon")) {
+        result.add(new Node(NodeType.BALOON, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
+      } else if (line.startsWith("JetPlane")) {
+        result.add(new Node(NodeType.JETPLANE, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
+      } else if (line.startsWith("Helicopter")) {
+        result.add(new Node(NodeType.HELICOPTER, elements[1], toInt(elements[2]), toInt(elements[3]), toInt(elements[4])));
+      } else {
         System.out.println("THIS CODE MUST NOT BE REACHABLE!");
-	  }
+      }
     }
     return result;
   }
 
-  public LinkedList<String> parseFileToList(String fileName) {
+  public static LinkedList<String> parseFileToList(String fileName) {
     LinkedList<String> input = new LinkedList<>();
 
     try {
@@ -55,19 +52,22 @@ public class Utils {
       }
 	  buffer.close();
     } catch (IOException e) {
-      System.out.println("Exception " + e);
+      throw new InvalidInputFile(e.getMessage());
     }
     return input;
   }
 
-  public boolean isContentValid(LinkedList<String> content) {
-    String[] aircrafts = {"Balloon", "JetPlane", "Helicopter"};
+  public static void validateContent(LinkedList<String> content) throws InvalidInputFile {
     ListIterator<String> it = content.listIterator();
-    String firstElement = it.next();
 
-    if (!isFirstLineValid(firstElement)) {
-      System.out.println("first line is invalid");
-      return false;
+    try {
+      String firstElement = it.next();
+
+      if (!isFirstLineValid(firstElement)) {
+        throw new InvalidInputFile("First line should be a positive integer.");
+      }
+    } catch (NoSuchElementException e) {
+      throw new InvalidInputFile(e.getMessage());
     }
 
     while (it.hasNext()) {
@@ -77,12 +77,9 @@ public class Utils {
       ListIterator<String> it1 = list.listIterator();
       int numberOfElements = 0;
 
-      //list.forEach(System.out::println);
-
 
       if (!isPositiveNumber(elements)) {
-        System.out.println("number is invalid because it's negative");
-        return false;
+        throw new InvalidInputFile("Coordinates can only be positive integers.");
       }
 
       while (it1.hasNext()) {
@@ -91,33 +88,22 @@ public class Utils {
       }
 
       if (numberOfElements != 5) {
-        System.out.println("number is invalid because it's not equal to 5");
-        return false;
+        throw new InvalidInputFile("Every line should contain five elements as follows: TYPE NAME ID LONGITUDE LATITUDE HEIGHT");
       }
-
-      //list.forEach(System.out::println);
-//      if (!list.contains(aircrafts[0])
-//              && !list.contains(aircrafts[1])
-//              && !list.contains(aircrafts[2])) {
-//        System.out.println("invalid aircraft type");
-//        return false;
-//      }
     }
 
-    return true;
   }
 
-  private boolean isFirstLineValid(String line) {
+  private static boolean isFirstLineValid(String line) {
     try {
-      int result = Integer.parseInt(line);
+      Integer.parseInt(line);
     } catch (Exception e) {
-      System.out.println("Exception " + e);
       return false;
     }
     return true;
   }
 
-  public boolean isPositiveNumber(String[] els) {
+  public static boolean isPositiveNumber(String[] els) {
     for (String el : els) {
       if (Objects.equals(el, els[0]) || Objects.equals(el, els[1])) {
         continue;
@@ -129,14 +115,13 @@ public class Utils {
           return false;
         }
       } catch (Exception e) {
-        System.out.println("Exception " + e);
         return false;
       }
     }
     return true;
   }
 
-  private int toInt(String value) {
+  private static int toInt(String value) {
     return Integer.parseInt(value);
   }
 }

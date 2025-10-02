@@ -2,43 +2,36 @@
 **	@author Youness Zioual
 */
 
-import java.nio.charset.CoderResult;
-
 public class Helicopter extends Aircraft {
 	Helicopter(long id, String name, Coordinates coordinates) {
         super(id, name, coordinates);
-
-		System.out.println("A Helicopter is taking off");
-		//weatherTower.register(this); // take off
 	}
 
 	@Override
 	public void updateConditions() {
 		String weather = this.weatherTower.getWeather(coordinates);
 
-		if (coordinates.getHeight() <= 0) { // landing
-			System.out.println("A helicopter is landing");
-			weatherTower.unregister(this);
-		}
-
-		switch (weather) {
-			case "Sunny" -> {
-				// longitude increases by 10
-				// height increases by 2
+		switch (weather.toLowerCase()) {
+			case "sun" -> {
+				this.log("Helicopter", "Oh today's sunny!!!!!");
 				Coordinates.setLongitude(coordinates.getLongitude() + 10);
-				Coordinates.setHeight(coordinates.getHeight() + 10);
+                Coordinates.setHeight(Math.min(coordinates.getHeight() + 2, 100));
 			}
-			case "Rainy" -> {
-				// longitude increase by 5
+			case "rain" -> {
+				this.log("Helicopter", "It's a rainy day!");
 				Coordinates.setLongitude(coordinates.getLongitude() + 5);
 			}
-			case "Snow" -> {
-				// Longitude increases by 12
-				Coordinates.setLongitude(coordinates.getLongitude() + 12);
+			case "fog" -> {
+				this.log("Helicopter", "Oh My days! we're going through a fog!");
+				Coordinates.setLongitude(Math.min(coordinates.getLongitude() + 1, 100));
 			}
-			case "Fog" -> {
-				// Height increases by 1
-				Coordinates.setHeight(coordinates.getHeight() + 1);
+			case "snow" -> {
+				this.log("Helicopter", "It's a snowy day!");
+				Coordinates.setHeight(coordinates.getHeight() - 12);
+				if (coordinates.getHeight() <= 0) {
+					this.weatherTower.unregister(this);
+					System.out.println("Tower says: Helicopter(" + id + "): unregistered from the weather tower.");
+				}
 			}
 		}
 	}

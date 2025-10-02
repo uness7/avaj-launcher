@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-	private static List<Flyable> observers = new ArrayList<>();
+	private List<Flyable> observers = new ArrayList<>();
 
 	Tower() {
 	}
@@ -20,8 +20,11 @@ public class Tower {
 	}
 
 	protected void conditionChanged() {
-		for (Flyable p_flyable : observers) {
+		for (Flyable p_flyable : new ArrayList<>(observers)) {
 			p_flyable.updateConditions();
 		}
 	}
+
+	//for (Flyable p_flyable : observers) { -> wrong and throws java.util.ConcurrentModificationException
+	// because we are modifying observers while iterating over it
 }
